@@ -32,3 +32,20 @@ contract Lock {
         owner.transfer(address(this).balance);
     }
 }
+
+
+contract Web3RSVP {
+    struct CreateEvent {
+        bytes32 eventId;
+        string eventDataCID;
+        address eventOwner;
+        uint256 eventTimestamp;
+        uint256 deposit;
+        uint256 maxCapacity;
+        address[] confirmRVCPs;
+        address[] claimedRSVPs;
+        bool paidOut;
+    }
+
+    mapping(bytes32 => CreateEvent) public idToEvent;
+}
